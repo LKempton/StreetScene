@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - TeleportSurface
+  - Crowbar
+  - LockedDoor
   layers:
   - Default
   - TransparentFX
