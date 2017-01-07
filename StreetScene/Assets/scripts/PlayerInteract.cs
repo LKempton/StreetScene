@@ -26,7 +26,9 @@ public class PlayerInteract : MonoBehaviour {
         var fwd = transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(castPoint.position, fwd, out hit, Mathf.Infinity, layerMask)) 
+        Debug.DrawRay(transform.position, fwd);
+
+        if (Physics.Raycast(castPoint.position, castPoint.forward, out hit, Mathf.Infinity, layerMask)) 
         {
             if (hit.collider == null)
             {
@@ -96,8 +98,20 @@ public class PlayerInteract : MonoBehaviour {
                 }
             }
 
+            else if ((hit.distance <= 2.5) && (hit.collider.gameObject.tag == "Key"))
+            {
+                print("key in range");
+                textDisplay.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Destroy(hit.collider.gameObject);
+                    pi.SetKey(true);
+                }
+            }
             else
             {
+                print("miss");
                 textDisplay.SetActive(false);
             }
         }
