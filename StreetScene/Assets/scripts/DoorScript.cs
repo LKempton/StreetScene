@@ -13,5 +13,6 @@ public class DoorScript : MonoBehaviour {
     public void OpenDoor()
     {
         anim.SetTrigger("OpenDoor");
+        print("animation called");
     }
 }

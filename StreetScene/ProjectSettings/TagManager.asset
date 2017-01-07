@@ -7,6 +7,11 @@ TagManager:
   - TeleportSurface
   - Crowbar
   - LockedDoor
+  - LockedCabinet
+  - Axe
+  - Key
+  - Bar
+  - Plank
   layers:
   - Default
   - TransparentFX
