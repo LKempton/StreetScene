@@ -69,6 +69,7 @@ public class PlayerInteract : MonoBehaviour {
                 textDisplay.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E) && (cs.GetKeys() <= 0))
                 {
+                    Destroy(hit.collider.gameObject);
                     pi.SetAxe(true);
                 }
                 
