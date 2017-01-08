@@ -126,6 +126,11 @@ public class PlayerInteract : MonoBehaviour {
                 print("story in range");
                 storyText.GetComponent<Text>().text = hit.collider.gameObject.GetComponent<StorySphere>().GetStory().ToString();
                 storyText.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.gameObject.GetComponent<StorySphere>().EventSphere();
+                }
             }
             else
             {

@@ -8,6 +8,11 @@ public class MenuScript : MonoBehaviour {
     [SerializeField]
     private GameObject controlPanel;
 
+    void Start()
+    {
+        Cursor.visible = true;
+    }
+
     public void StartLevel()
     {
         Application.LoadLevel(1);
