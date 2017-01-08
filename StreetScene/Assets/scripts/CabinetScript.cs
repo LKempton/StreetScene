@@ -10,6 +10,9 @@ public class CabinetScript : MonoBehaviour {
     [SerializeField]
     private GameObject[] keySlots = new GameObject[5];
 
+    [SerializeField]
+    private SoundManagerScript sm;
+
     private int index = 0;
 
     void Start()
@@ -19,6 +22,7 @@ public class CabinetScript : MonoBehaviour {
 
     void OpenCabinet()
     {
+        sm.PlayOpen();
         print("Cabinet opening");
         anim.SetTrigger("OpenCabinet");
     }

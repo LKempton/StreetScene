@@ -15,6 +15,8 @@ public class PlayerInteract : MonoBehaviour {
     private DoorScript ds;
     private CabinetScript cs;
     private PlayerInventory pi;
+    [SerializeField]
+    private SoundManagerScript sm;
 
     void Start()
     {
@@ -43,6 +45,7 @@ public class PlayerInteract : MonoBehaviour {
 
                 if (Input.GetKeyDown(KeyCode.E) && pi.GetCrowbar() == true)
                 {
+                    sm.PlayOpen();
                     ds = hit.collider.gameObject.GetComponentInParent<DoorScript>();
 
                     ds.OpenDoor();
@@ -58,6 +61,7 @@ public class PlayerInteract : MonoBehaviour {
 
                     if (pi.GetKey() > 0)
                     {
+                        sm.KeySound();
                         pi.SetKey(false);
 
                         cs.InsertKey();
@@ -71,6 +75,7 @@ public class PlayerInteract : MonoBehaviour {
                 textDisplay.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E) && (cs.GetKeys() <= 0))
                 {
+                    sm.PlayPickup();
                     Destroy(hit.collider.gameObject);
                     pi.SetAxe(true);
                 }
@@ -83,6 +88,7 @@ public class PlayerInteract : MonoBehaviour {
                 textDisplay.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    sm.PlayPickup();
                     Destroy(hit.collider.gameObject);
                     pi.SetCrowbar(true);
                 }
@@ -94,6 +100,7 @@ public class PlayerInteract : MonoBehaviour {
                 textDisplay.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E) && pi.GetAxe() == true)
                 {
+                    sm.PlayOpen();
                     Destroy(hit.collider.gameObject);
                 }
             }
@@ -105,13 +112,14 @@ public class PlayerInteract : MonoBehaviour {
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    sm.PlayPickup();
                     Destroy(hit.collider.gameObject);
                     pi.SetKey(true);
                 }
             }
             else
             {
-                print("miss");
+                
                 textDisplay.SetActive(false);
             }
         }
