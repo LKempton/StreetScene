@@ -14,6 +14,7 @@ TagManager:
   - Plank
   - Indoors
   - Outdoors
+  - Story
   layers:
   - Default
   - TransparentFX

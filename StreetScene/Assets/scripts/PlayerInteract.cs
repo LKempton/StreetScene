@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerInteract : MonoBehaviour {
@@ -8,6 +9,8 @@ public class PlayerInteract : MonoBehaviour {
 
     [SerializeField]
     private GameObject textDisplay;
+    [SerializeField]
+    private GameObject storyText;
 
     [SerializeField]
     private LayerMask layerMask;
@@ -117,9 +120,16 @@ public class PlayerInteract : MonoBehaviour {
                     pi.SetKey(true);
                 }
             }
+
+            else if ((hit.distance <= 2.5) && (hit.collider.gameObject.tag == "Story"))
+            {
+                print("story in range");
+                storyText.GetComponent<Text>().text = hit.collider.gameObject.GetComponent<StorySphere>().GetStory().ToString();
+                storyText.SetActive(true);
+            }
             else
             {
-                
+                storyText.SetActive(false);
                 textDisplay.SetActive(false);
             }
         }
