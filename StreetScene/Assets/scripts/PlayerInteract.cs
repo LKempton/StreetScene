@@ -99,7 +99,7 @@ public class PlayerInteract : MonoBehaviour {
 
             else if ((hit.distance <= 3.0) && (hit.collider.gameObject.tag == "Plank"))
             {
-                print("plank in range");
+                //print("plank in range");
                 textDisplay.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E) && pi.GetAxe() == true)
                 {
@@ -110,7 +110,7 @@ public class PlayerInteract : MonoBehaviour {
 
             else if ((hit.distance <= 2.5) && (hit.collider.gameObject.tag == "Key"))
             {
-                print("key in range");
+                //print("key in range");
                 textDisplay.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
@@ -123,7 +123,7 @@ public class PlayerInteract : MonoBehaviour {
 
             else if ((hit.distance <= 2.5) && (hit.collider.gameObject.tag == "Story"))
             {
-                print("story in range");
+                //print("story in range");
                 storyText.GetComponent<Text>().text = hit.collider.gameObject.GetComponent<StorySphere>().GetStory().ToString();
                 storyText.SetActive(true);
 
@@ -137,6 +137,15 @@ public class PlayerInteract : MonoBehaviour {
                 storyText.SetActive(false);
                 textDisplay.SetActive(false);
             }
+        }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Well"))
+        {
+            print("end level");
+            Application.LoadLevel(2);
         }
     }
 }

@@ -15,6 +15,7 @@ TagManager:
   - Indoors
   - Outdoors
   - Story
+  - Well
   layers:
   - Default
   - TransparentFX

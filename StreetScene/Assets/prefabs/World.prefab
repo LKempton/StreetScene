@@ -1750,6 +1750,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000011682526606
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013149074376}
+  - 65: {fileID: 65000010888800548}
+  m_Layer: 0
+  m_Name: Hitbox
+  m_TagString: Well
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000011736689476
 GameObject:
   m_ObjectHideFlags: 1
@@ -4692,7 +4708,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011143969548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 280.3793, y: -26.851768, z: 231.96939}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -6193,6 +6209,7 @@ Transform:
   - {fileID: 4000011823427746}
   - {fileID: 4000012123364500}
   - {fileID: 4000011630200144}
+  - {fileID: 4000013149074376}
   m_Father: {fileID: 4000013848250716}
   m_RootOrder: 7
 --- !u!4 &4000012059102754
@@ -7083,6 +7100,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010309555898}
   m_RootOrder: 24
+--- !u!4 &4000013149074376
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011682526606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.03, y: 0.706, z: -0.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012041117796}
+  m_RootOrder: 5
 --- !u!4 &4000013165337810
 Transform:
   m_ObjectHideFlags: 1
@@ -16191,6 +16221,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6711013, y: 0.6033839, z: 6.414468}
   m_Center: {x: -0.0017076749, y: -0.032873202, z: 3.207236}
+--- !u!65 &65000010888800548
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011682526606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9857941, y: 1.7585083, z: 0.35925904}
+  m_Center: {x: 0.032711513, y: -0.27127892, z: -0.32026184}
 --- !u!65 &65000010893890928
 BoxCollider:
   m_ObjectHideFlags: 1
