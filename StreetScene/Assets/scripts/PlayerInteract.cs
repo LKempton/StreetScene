@@ -20,6 +20,8 @@ public class PlayerInteract : MonoBehaviour {
     private PlayerInventory pi;
     [SerializeField]
     private SoundManagerScript sm;
+    [SerializeField]
+    private PlayerVoiceScript pv;
 
     void Start()
     {
@@ -52,6 +54,16 @@ public class PlayerInteract : MonoBehaviour {
                     ds = hit.collider.gameObject.GetComponentInParent<DoorScript>();
 
                     ds.OpenDoor();
+                }
+
+                else if (Input.GetKeyDown(KeyCode.E) && pi.GetCrowbar() == false && pi.GetKey() > 0)
+                {
+                    pv.DoorVoiceClips(true);
+                }
+
+                else if (Input.GetKeyDown(KeyCode.E) && pi.GetCrowbar() == false)
+                {
+                    pv.DoorVoiceClips(false);
                 }
             }
             else if ((hit.distance <= 2.5) && (hit.collider.gameObject.tag == "LockedCabinet"))
@@ -105,6 +117,14 @@ public class PlayerInteract : MonoBehaviour {
                 {
                     sm.PlayOpen();
                     Destroy(hit.collider.gameObject);
+                }
+                else if (Input.GetKeyDown(KeyCode.E) && pi.GetAxe() == false && pi.GetCrowbar() == false)
+                {
+                    pv.PlankVoiceClips(false);
+                }
+                else if (Input.GetKeyDown(KeyCode.E) && pi.GetAxe() == false && pi.GetCrowbar() == true)
+                {
+                    pv.PlankVoiceClips(true);
                 }
             }
 
